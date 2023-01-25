@@ -13,7 +13,7 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
-  const backLinkHref = location.state?.location ?? '/';
+  const backLinkHref = location.state?.location ?? '/movies';
 
   useEffect(() => {
     getMovieDetails(Number(movieId))
@@ -74,10 +74,10 @@ const MovieDetails = () => {
         <h2 className={styles.add__info_title}>
           Additional information
         </h2>
-        <NavLink to="cast" state={location.state} className={styles.navLink}>
+        <NavLink to="cast" state={{ location }} className={styles.navLink}>
           CAST
         </NavLink>
-        <NavLink to="reviews" state={location.state} className={styles.navLink}>
+        <NavLink to="reviews" state={{ location }} className={styles.navLink}>
           Reviews
         </NavLink>
         <Suspense fallback={<div>Loading page...</div>}>

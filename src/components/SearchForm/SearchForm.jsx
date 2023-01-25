@@ -21,7 +21,7 @@ export const SearchForm = () => {
     searchMovie(query).then(data => {
       setMovies(data);
     });
-  }, [searchParams, query]);
+  }, [query]);
 
   const handleSubmit = event => {
     event.preventDefault();

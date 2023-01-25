@@ -8,9 +8,6 @@ const Home = () => {
     getTrending().then(data => setTrendMovies(data));
   }, []);
 
-  if (!trendMovies) {
-    return <p>404 Not Found</p>;
-  }
   return (
     <>
       <MoviesList movies={trendMovies} />
